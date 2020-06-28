@@ -1,0 +1,17 @@
+	apiVersion: v1
+	kind: Service
+	metadata:
+	  labels:
+	    app: bayes-house
+	  name: bayes-house
+	  namespace: istio-example
+	spec:
+	  type: NodePort
+	  ports:
+	    - port: 8000
+	      targetPort: 8000
+	      protocol: TCP
+	      name: http
+	  selector:
+	    app: bayes-house
+

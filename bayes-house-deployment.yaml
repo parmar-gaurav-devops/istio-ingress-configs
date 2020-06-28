@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: bayes-house
+  namespace: istio-example
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: bayes-house
+        version: v1
+    spec:
+      containers:
+      - image:  <docker image>
+        name: bayes-house
+        ports:
+        - containerPort: 8000
+
